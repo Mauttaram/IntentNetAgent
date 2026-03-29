@@ -204,3 +204,7 @@ SCHEMA_REGISTRY["networking"] = NetworkConfigEntity
 ```
 
 The same pattern works for any vertical: medical offices (HIPAA segmentation), retail chains (POS isolation), restaurants (kitchen/POS/guest separation) — register different schemas and tools, reuse the entire framework.
+
+---
+
+*© 2026 [Jaya Kompella](https://github.com/Mauttaram). Licensed under the [MIT License](LICENSE). See [CONTRIBUTORS.md](CONTRIBUTORS.md).*
