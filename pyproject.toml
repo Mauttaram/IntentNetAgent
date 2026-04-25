@@ -5,10 +5,10 @@ build-backend = "setuptools.backends.legacy:build"
 [project]
 name = "intent-net-agent"
 version = "0.1.0"
-description = "Intent-Based Networking Agent for SMBs — demo built on ScalableAgents"
+description = "Intent-Based Networking Agent for SMBs — demo built on AgentCore"
 requires-python = ">=3.11"
 dependencies = [
-    "scalable-agents @ file://../ScalableAgents",
+    "agentcore @ file://../AgentCore",
     "langchain-core>=0.3",
     "langgraph>=0.3",
     "pydantic>=2.0",

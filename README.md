@@ -1,6 +1,6 @@
 # IntentNetAgent
 
-Intent-Based Networking for SMBs — a domain-specific agent built on the [ScalableAgents](../ScalableAgents) framework.
+Intent-Based Networking for SMBs — a domain-specific agent built on the [AgentCore](../AgentCore) framework.
 
 > A coffee shop owner with no IT background says: *"I want internet connectivity to my Payment system and my Guest WiFi area."*
 > The agent produces a PCI-DSS compliant, encrypted, segmented network — with the owner approving every decision before a single device is touched.
@@ -52,7 +52,7 @@ Owner: "I want internet connectivity to my Payment system and my Guest WiFi area
 
 ### What it mocks
 
-The ScalableAgents nodes call the LLM in two patterns. `IntentNetDemoLLM` implements both:
+The AgentCore nodes call the LLM in two patterns. `IntentNetDemoLLM` implements both:
 
 | Call pattern | Node | Returns |
 |---|---|---|
@@ -157,7 +157,7 @@ class NetworkConfigEntity(EntityBase):
 
 ```
 IntentNetAgent/
-  pyproject.toml                    depends on ../ScalableAgents
+  pyproject.toml                    depends on ../AgentCore
   intent_net_agent/
     schemas/
       network_entities.py           NetworkSegmentEntity, NetworkConfigEntity
@@ -178,7 +178,7 @@ IntentNetAgent/
 ```bash
 # From AgenticFrmk/
 cd IntentNetAgent
-pip install -e "../ScalableAgents[dev]" -e ".[dev]"
+pip install -e "../AgentCore[dev]" -e ".[dev]"
 python -m intent_net_agent.demo
 ```
 
@@ -186,20 +186,20 @@ No API key, no database, no network hardware required — everything is syntheti
 
 ---
 
-## How it extends ScalableAgents
+## How it extends AgentCore
 
 IntentNetAgent adds a networking domain on top of the framework without modifying any framework code:
 
 ```python
 # Register networking tools into the shared TOOL_REGISTRY
-from scalable_agents.tools.registry import TOOL_REGISTRY
+from agentcore.tools.registry import TOOL_REGISTRY
 TOOL_REGISTRY["create_vlan"]          = create_vlan
 TOOL_REGISTRY["configure_firewall"]   = configure_firewall
 TOOL_REGISTRY["setup_encryption"]     = setup_encryption
 TOOL_REGISTRY["apply_pci_compliance"] = apply_pci_compliance
 
 # Register the networking entity schema so extract_entities resolves it
-from scalable_agents.schemas.registry import SCHEMA_REGISTRY
+from agentcore.schemas.registry import SCHEMA_REGISTRY
 SCHEMA_REGISTRY["networking"] = NetworkConfigEntity
 ```
 

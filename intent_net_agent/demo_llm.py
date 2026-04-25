@@ -11,8 +11,8 @@ from __future__ import annotations
 
 from langchain_core.messages import AIMessage
 
-from scalable_agents.llm.config import LLMConfig
-from scalable_agents.schemas.intent import Intent
+from agentcore.llm.config import LLMConfig
+from agentcore.schemas.intent import Intent
 from intent_net_agent.schemas.network_entities import (
     NetworkConfigEntity,
     NetworkSegmentEntity,
@@ -76,8 +76,8 @@ class _StructuredOutputWrapper:
 
     async def ainvoke(self, messages) -> object:  # noqa: ANN001
         # Import inside method to avoid circular-import at module load time
-        from scalable_agents.nodes.plan import PlanResponse
-        from scalable_agents.schemas.plan import Step
+        from agentcore.nodes.plan import PlanResponse
+        from agentcore.schemas.plan import Step
 
         if self._schema is Intent:
             return Intent(

@@ -7,7 +7,7 @@ intent.domain == "networking".
 """
 from __future__ import annotations
 from pydantic import Field
-from scalable_agents.schemas.entity import EntityBase
+from agentcore.schemas.entity import EntityBase
 
 
 class NetworkSegmentEntity(EntityBase):

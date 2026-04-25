@@ -53,8 +53,8 @@ if str(_scalable_agents_src) not in sys.path:
 # ---------------------------------------------------------------------------
 # Register IntentNet tools and schema into ScalableAgents' global registries
 # ---------------------------------------------------------------------------
-from scalable_agents.tools.registry import TOOL_REGISTRY          # noqa: E402
-from scalable_agents.schemas.registry import SCHEMA_REGISTRY      # noqa: E402
+from agentcore.tools.registry import TOOL_REGISTRY          # noqa: E402
+from agentcore.schemas.registry import SCHEMA_REGISTRY      # noqa: E402
 
 from intent_net_agent.tools.create_vlan import create_vlan                    # noqa: E402
 from intent_net_agent.tools.configure_firewall import configure_firewall      # noqa: E402
@@ -73,7 +73,7 @@ SCHEMA_REGISTRY["networking"] = NetworkConfigEntity
 # ---------------------------------------------------------------------------
 # Framework imports (after path fixup)
 # ---------------------------------------------------------------------------
-from scalable_agents.graph.builder import build_graph              # noqa: E402
+from agentcore.graph.builder import build_graph              # noqa: E402
 from intent_net_agent.demo_llm import make_demo_llm_config         # noqa: E402
 
 
