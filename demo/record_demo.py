@@ -28,7 +28,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 HERE       = Path(__file__).resolve().parent          # IntentNetAgent/demo/
 PKG_ROOT   = HERE.parent                              # IntentNetAgent/
-VENV_PY    = PKG_ROOT.parent / "ScalableAgents" / ".venv" / "bin" / "python"
+VENV_PY    = PKG_ROOT.parent / "AgentCore" / ".venv" / "bin" / "python"
 CAST_FILE  = HERE / "demo.cast"
 GIF_FILE   = HERE / "demo.gif"
 

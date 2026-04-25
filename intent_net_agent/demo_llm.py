@@ -195,7 +195,7 @@ class IntentNetDemoLLM:
     """
     Drop-in replacement for a real ChatAnthropic model.
 
-    Implements the two call patterns used by ScalableAgents nodes:
+    Implements the two call patterns used by AgentCore nodes:
       - with_structured_output(schema).ainvoke(messages)  — intent, plan, entities
       - ainvoke(messages)                                  — CoT trace (validate_cot)
     """

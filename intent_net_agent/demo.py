@@ -1,7 +1,7 @@
 """
 IntentNetAgent Demo
 ===================
-Intent-Based Networking for SMBs — powered by ScalableAgents Framework.
+Intent-Based Networking for SMBs — powered by AgentCore Framework.
 
 Scenario
 --------
@@ -24,7 +24,7 @@ All tool calls are synthetic. No API key, database, or network hardware required
 Usage
 -----
     # From AgenticFrmk/IntentNetAgent/
-    pip install -e "../ScalableAgents[dev]" -e ".[dev]"
+    pip install -e "../AgentCore[dev]" -e ".[dev]"
     python -m intent_net_agent.demo
 """
 from __future__ import annotations
@@ -43,15 +43,15 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import Command
 
 # ---------------------------------------------------------------------------
-# Bootstrap: ensure ScalableAgents is importable when running from source
+# Bootstrap: ensure AgentCore is importable when running from source
 # ---------------------------------------------------------------------------
 _repo_root = Path(__file__).resolve().parents[2]
-_scalable_agents_src = _repo_root / "ScalableAgents"
-if str(_scalable_agents_src) not in sys.path:
-    sys.path.insert(0, str(_scalable_agents_src))
+_agentcore_src = _repo_root / "AgentCore"
+if str(_agentcore_src) not in sys.path:
+    sys.path.insert(0, str(_agentcore_src))
 
 # ---------------------------------------------------------------------------
-# Register IntentNet tools and schema into ScalableAgents' global registries
+# Register IntentNet tools and schema into AgentCore' global registries
 # ---------------------------------------------------------------------------
 from agentcore.tools.registry import TOOL_REGISTRY          # noqa: E402
 from agentcore.schemas.registry import SCHEMA_REGISTRY      # noqa: E402
@@ -215,7 +215,7 @@ async def run_demo() -> None:
     # ── Header ─────────────────────────────────────────────────────────────
     out(f"\n{_c('=' * 72, BOLD + MAGENTA)}")
     out(f"  {_c('IntentNetAgent — Intent-Based Networking for SMBs', BOLD + MAGENTA)}")
-    out(f"  {_c('Powered by ScalableAgents Framework', DIM)}")
+    out(f"  {_c('Powered by AgentCore Framework', DIM)}")
     out(f"{_c('=' * 72, BOLD + MAGENTA)}\n")
     out(f"  Scenario: Coffee shop owner configures a PCI-DSS compliant network")
     out(f"  No IT knowledge required — plain English is the interface.\n")

@@ -1,7 +1,7 @@
 """
 Network entity schemas for the IntentNetAgent.
 
-These extend ScalableAgents' EntityBase and are registered in SCHEMA_REGISTRY
+These extend AgentCore' EntityBase and are registered in SCHEMA_REGISTRY
 under the "networking" domain key so that extract_entities picks them up when
 intent.domain == "networking".
 """
